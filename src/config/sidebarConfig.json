@@ -1,0 +1,50 @@
+{
+  "header": [
+    {
+      "title": "Añadir Personal",
+      "icon": "Add",
+      "route": "modal",
+      "component": "AddEmployee"
+    },
+    {
+      "title": "Añadir Paciente",
+      "icon": "Add",
+      "route": "modal",
+      "component": "AddPatient"
+    }
+  ],
+  "body": [
+    {
+      "title": "Inicio",
+      "icon": "Home",
+      "route": "/"
+    },
+    {
+      "title": "Pacientes",
+      "icon": "Group",
+      "route": "/patients-table"
+    },
+    {
+      "title": "Personal",
+      "icon": "Badge",
+      "route": "/employees-table"
+    },
+    {
+      "title": "Retiros a vencer ",
+      "icon": "AvTimer",
+      "route": "/to-expire-table",
+      "type": "notification"
+    },
+    {
+      "title": "Reportes",
+      "icon": "Assessment",
+      "dropdown": [
+        {
+          "title": "Vacunaciones ",
+          "icon": "Vaccines",
+          "route": "/vaccinations-table"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+services:
+  mysqldb:
+    image: mysql
+    environment:
+      - MYSQL_DATABASE=farmacias_webapp
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - 3306:3306
+    networks:
+      - app-network
+
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile  # Si tienes un Dockerfile específico para tu frontend.
+    ports:
+      - 3000:3000
+    volumes:
+      - ./app:/farmacia-webapp # Mapea el directorio local 'frontend' al directorio '/app' en el contenedor
+      - /farmacia-webapp/node_modules # Evita que los node_modules del contenedor se sobrescriban por los locales
+    environment:
+      - CHOKIDAR_USEPOLLING=true # Ayuda a que los cambios en archivos se detecten mejor en Docker
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    depends_on:
+      - mysqldb
+    ports:
+      - 8080:8080
+    environment:
+      - DB_HOST=mysqldb
+      - DB_USER=root
+      - DB_NAME=farmacias_webapp
+      - DB_PASSWORD=root
+    links:
+      - mysqldb
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
