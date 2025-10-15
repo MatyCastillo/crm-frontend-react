@@ -3,7 +3,7 @@
 
 ## 💻 `README.md` — **CRM Platform Frontend**
 
-```markdown
+
 # CRM Platform - Frontend
 
 Interfaz web para la gestión de clientes de CRM Platform, desarrollada con **React.js**, **Redux Toolkit** y **Material UI**.  
