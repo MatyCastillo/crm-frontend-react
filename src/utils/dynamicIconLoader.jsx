@@ -9,4 +9,4 @@ const renderIcon = (iconName) => {
   return <IconComponent />;
 };
 
-export {renderIcon}
+export { renderIcon };

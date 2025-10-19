@@ -14,7 +14,7 @@ import {
 } from "@mui/material";
 import {
   getUpcommingExpirationPrescriptions,
-  markAsNotificationSend,
+  // markAsNotificationSend,
   updateNotificationStatus,
 } from "../services";
 import { capitalizeFirstLetter } from "../utils/helper";
